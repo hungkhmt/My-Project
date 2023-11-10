@@ -1,0 +1,126 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.sanpham-header {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.filter-sanpham-wrapper {
+  display: flex;
+  padding-bottom: 20px;
+  float: left;
+}
+
+.filter-sanpham-item {
+  height: 15px;
+  padding-right: 250px;
+  width: 240px;
+}
+
+#sanpham_table {
+  width: 100%;
+  border-collapse: collapse;
+  /* overflow: auto; */
+}
+
+.sanpham-function {
+  width: 100%;
+  height: 35px;
+}
+
+.sanpham-function .function-bar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.sanpham-function .function-bar .add-sync-del-btn a {
+  margin-left: 10px;
+}
+#sanpham_table th,
+#sanpham_table td {
+  padding: 8px;
+  text-align: center;
+}
+
+#sanpham_table thead th {
+  background-color: #00ffff;
+}
+
+#sanpham_table tbody tr:nth-child(even) {
+  background-color: #aed9f3bc;
+}
+
+#sanpham_table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid aqua;
+  border-top: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 62vh;
+}
+
+.sanpham-function {
+  display: flex;
+  justify-content: space-between;
+}
+
+.function-bar {
+  width: 100px;
+}
+.add-sync-del-btn {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+td {
+  font-size: 0.85rem;
+}
+
+.page-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  bottom: 0;
+  z-index: 1;
+}
+
+.page-item {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 5px;
+  width: 30px; /* Đặt kích thước chiều rộng và chiều cao bằng nhau */
+  height: 30px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #aaaaaa;
+  border-radius: 50%;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+}
+
+.page-item:hover {
+  background-color: #3c91e6;
+}
+
+#above-SanPham {
+  border: none;
+  border-radius: unset;
+  background: none;
+}
+
+#above-SanPham:hover {
+  color: #3c91e6;
+}

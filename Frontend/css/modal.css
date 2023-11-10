@@ -1,0 +1,183 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#object-info {
+  position: absolute;
+  background-color: white;
+  max-width: 350px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  left: 35%;
+  top: 0;
+  display: none;
+}
+
+#object-info h2 {
+  margin-bottom: 5px;
+}
+
+#object-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal {
+  width: 100%;
+}
+
+.modal label {
+  font-size: 15px;
+}
+
+.modal input {
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+  margin-bottom: 12px;
+  margin-top: 5px;
+}
+
+.modal-cus {
+  display: flex;
+  column-gap: 15px;
+  /* justify-content: space-between; */
+}
+
+#object-info .modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#object-info .modal-footer button {
+  height: 30px;
+  width: 100px;
+  margin: 0 15px;
+}
+
+#object-info .modal-footer #btnSave {
+  background-color: rgb(17, 215, 10);
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+}
+
+#object-info .modal-footer #btnCancel {
+  background-color: #d70808;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+}
+
+#delete-sanpham-modal {
+  position: absolute;
+  background-color: white;
+  max-width: 350px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  left: 35%;
+  top: 0;
+  display: none;
+}
+
+#delete-sanpham-modal h5 {
+  margin-bottom: 5px;
+}
+
+#delete-sanpham-modal .modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#delete-sanpham-modal .modal-header .close {
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  font-size: 20px;
+}
+
+#delete-sanpham-modal .modal-header .close:hover {
+  background-color: #d70808;
+}
+
+#delete-sanpham-modal .modal-body {
+  width: 100%;
+  margin: 15px 0;
+}
+
+#delete-sanpham-modal .modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#delete-sanpham-modal .modal-footer button {
+  height: 25px;
+  width: 70px;
+  margin: 0 30px;
+}
+
+#delete-sanpham-modal .modal-footer .btn-primary {
+  background-color: #d70808;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+}
+
+#delete-sanpham-modal .modal-footer .btn-secondary {
+  background-color: gray;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+}
+
+#quanly-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal #modal-select-gioitinh {
+  position: relative;
+  top: 35%;
+  height: 40px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.modal #modal-select-role,
+.modal #modal-select-chinhanh {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#nhanvien-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

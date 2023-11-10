@@ -1,0 +1,109 @@
+<div class="sanpham-container">
+    <div class="sanpham-header">
+        <h1>DANH SÁCH QUẢN LÝ</h1>
+    </div>
+
+    <div class="sanpham-function">
+        <div class="function-bar">
+            <div class="add-sync-del-btn">
+                <a href="#" data-toggle="tooltip" title="Refresh" onclick="refreshQuanLy()">
+                    <i class="fa-solid fa-rotate fa-xl"></i>
+                </a>
+                <a href="#" data-toggle="tooltip" title="Add" onclick="openAddQuanLyModal()">
+                    <i class="fa-solid fa-square-plus fa-xl"></i>
+                </a>
+                <a href="#" data-toggle="tooltip" title="Delete"">
+                    <i class="fa-regular fa-trash-can fa-xl"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="sanpham-table">
+        <table id="sanpham_table">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" name='check-all' id="check_all"></th>
+                    <th>ID <i class="fa-solid fa-sort" onclick="changeQuanLySort('id')"></i></th>
+                    <th style="text-align: left;">Username <i class="fa-solid fa-sort" onclick="changeQuanLySort('username')"></i></th>
+                    <th style="text-align: left;">Họ tên <i class="fa-solid fa-sort" onclick="changeQuanLySort('fullName')"></i></th>
+                    <th>Giới tính <i class="fa-solid fa-sort" onclick="changeQuanLySort('gioiTinh')"></i></th>
+                    <th>Năm sinh <i class="fa-solid fa-sort" onclick="changeQuanLySort('namSinh')"></i></th>
+                    <th>Role <i class="fa-solid fa-sort" onclick="changeQuanLySort('role')"></i></th>
+                    <th>Chi nhánh ID <i class="fa-solid fa-sort" onclick="changeQuanLySort('chiNhanh')"></i></th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="sanpham-tab_body">
+                
+            </tbody>
+        </table>    
+    </div>
+
+    <div id="object-info">
+        <form action="#">
+            <h2>Thêm mới quản lý</h2>
+            <div id="quanly-body">
+                <input type="hidden" id="QuanLy-id" name="QuanLy-id" value="">
+                <div class="modal">
+                    <div class="modal-cus">
+                        <div class="modal">
+                            <label for="">First Name <br></label>
+                            <input type="text" placeholder="Enter first name" id="QuanLy-firstname" required>
+                        </div>
+                        <div class="modal">
+                            <label for="">Last Name <br></label>
+                            <input type="text" placeholder="Enter last name" id="QuanLy-lastname" required>
+                        </div>
+                    </div>       
+                </div>
+                <div class="modal-cus">
+                    <div class="modal">
+                        <label for="">Năm sinh<br></label>
+                        <input type="text" placeholder="Enter năm sinh" id="QuanLy-namsinh" required>
+                    </div>
+                    <div class="modal">
+                        <select class="modal-control" name="gioitinh" id="modal-select-gioitinh" required>
+                            <option value="">Chọn giới tính</option>
+                            <option value="NAM">Nam</option>
+                            <option value="NỮ">Nữ</option>
+                            <option value="KHÁC">Khác</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal">
+                    <label for="">Username <br></label>
+                    <input type="text" placeholder="Enter username" id="QuanLy-username" required>
+                </div>
+                <div class="modal">
+                    <label for="">Password <br></label>
+                    <input type="password" placeholder="Enter password" id="QuanLy-password" required>
+                </div>
+                <div class="modal-cus">
+                    <div class="modal">
+                        <select class="modal-control" name="role" id="modal-select-chinhanh" required>
+                            <option value="">Chọn chi nhánh</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="modal">
+                        <select class="modal-control" name="role" id="modal-select-role" required>
+                            <option value="">Chọn role</option>
+                            <option value="QL1">QL1</option>
+                            <option value="QL2">QL2</option>
+                            <option value="QL3">QL3</option>
+                            <option value="ADMIN">Admin</option>
+                        </select>
+                    </div>
+                </div>   
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" class="btn btn-success" onclick="saveQuanLy()">Lưu</button>
+                <button type="button" id="btnCancel" class="btn btn-secondary" onclick="hideQuanLyModal()">Hủy</button>
+            </div>
+        </form>
+    </div>
+</div>

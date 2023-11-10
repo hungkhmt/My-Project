@@ -1,0 +1,271 @@
+<div class="sanpham-container">
+  <div class="sanpham-header">
+    <h1>DANH SÁCH SẢN PHẨM</h1>
+  </div>
+
+  <div class="sanpham-function">
+    <div class="filter-sanpham-wrapper">
+      <div class="filter-sanpham-item">
+        <select
+          id="filter-min-dongia-select"
+          style="width: 240px; height: 25px"
+          class="operator"
+        >
+          <option value="" disabled selected hidden>Đơn giá thấp nhất</option>
+          <option value="1">1</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <div class="filter-sanpham-item">
+        <select
+          id="filter-max-dongia-select"
+          style="width: 240px; height: 25px"
+          class="operator"
+        >
+          <option value="" disabled selected hidden>Đơn giá cao nhất</option>
+          <option value="5">5</option>
+          <option value="12">12</option>
+          <option value="25">25</option>
+          <option value="30">30</option>
+        </select>
+      </div>
+      <div class="filter-sanpham-item">
+        <a
+          href="#"
+          data-toggle="tooltip"
+          title="Filter"
+          onclick="filterSanPham()"
+        >
+          <i class="fa-solid fa-filter fa-xl"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="function-bar">
+      <div class="add-sync-del-btn">
+        <a
+          href="#"
+          data-toggle="tooltip"
+          title="Refresh"
+          onclick="refreshSanPham()"
+        >
+          <i class="fa-solid fa-rotate fa-xl"></i>
+        </a>
+        <a
+          href="#"
+          data-toggle="tooltip"
+          title="Add"
+          onclick="openAddSanPhamModal()"
+        >
+          <i class="fa-solid fa-square-plus fa-xl"></i>
+        </a>
+        <a
+          href="#"
+          data-toggle="tooltip"
+          title="Delete"
+          onclick="openDeleteSanPhamModal()"
+        >
+          <i class="fa-regular fa-trash-can fa-xl"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sanpham-table">
+    <table id="sanpham_table">
+      <thead>
+        <tr>
+          <th><input type="checkbox" name="check-all" id="check_all" /></th>
+          <th>
+            ID
+            <i
+              class="fa-solid fa-sort"
+              id="sp-sort-id"
+              onclick="changeSanPhamSort('id')"
+            ></i>
+          </th>
+          <th>
+            Tên Sản Phẩm
+            <i
+              class="fa-solid fa-sort"
+              id="sp-sort-name"
+              onclick="changeSanPhamSort('tenSP')"
+            ></i>
+          </th>
+          <th>
+            Đơn giá
+            <i
+              class="fa-solid fa-sort"
+              id="sp-sort-dongia"
+              onclick="changeSanPhamSort('donGia')"
+            ></i>
+          </th>
+          <th>
+            Số lượng
+            <i
+              class="fa-solid fa-sort"
+              id="sp-sort-soluong"
+              onclick="changeSanPhamSort('soLuong')"
+            ></i>
+          </th>
+          <th>
+            Ngày nhập
+            <i
+              class="fa-solid fa-sort"
+              id="sp-sort-date"
+              onclick="changeSanPhamSort('ngayNhap')"
+            ></i>
+          </th>
+          <th>
+            Ngày hết hạn
+            <i
+              class="fa-solid fa-sort"
+              id="sp-sort-exp"
+              onclick="changeSanPhamSort('ngayHetHan')"
+            ></i>
+          </th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody id="sanpham-tab_body"></tbody>
+    </table>
+    <div class="page-nav">
+      <nav aria-label="Page SanPhams navigation example">
+        <ul class="pagination"></ul>
+      </nav>
+    </div>
+
+    <div class="page-nav">
+      <div
+        class="page-info"
+        id="SanPham-page-info"
+        style="font-size: 10px; display: none"
+      ></div>
+    </div>
+  </div>
+
+  <div id="object-info">
+    <form action="#">
+      <h2>Thêm mới sản phẩm</h2>
+      <div id="object-body">
+        <input type="hidden" id="sanpham-id" name="sanpham-id" value="" />
+        <div class="modal">
+          <label for="">Tên sản phẩm <br /></label>
+          <input
+            type="text"
+            placeholder="Enter product name"
+            id="sanpham-name"
+            required
+          />
+        </div>
+        <div class="modal-cus">
+          <div class="modal">
+            <label for="">Đơn giá <br /></label>
+            <input
+              type="text"
+              placeholder="Enter price"
+              id="sanpham-price"
+              required
+            />
+          </div>
+          <div class="modal">
+            <label for="">Số lượng <br /></label>
+            <input
+              type="text"
+              placeholder="Enter quantity"
+              id="sanpham-quantity"
+              required
+            />
+          </div>
+        </div>
+        <div class="modal-cus">
+          <div class="modal">
+            <label for="">Ngày nhập <br /></label>
+            <input
+              type="date"
+              placeholder="Enter date"
+              id="sanpham-date"
+              required
+            />
+          </div>
+          <div class="modal">
+            <label for="">Ngày hết hạn <br /></label>
+            <input
+              type="date"
+              placeholder="Enter date"
+              id="sanpham-exp"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          id="btnSave"
+          class="btn btn-success"
+          onclick="saveSanPham()"
+        >
+          Lưu
+        </button>
+        <button
+          type="button"
+          id="btnCancel"
+          class="btn btn-secondary"
+          onclick="hideSanPhamModal()"
+        >
+          Hủy
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div id="delete-sanpham-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Xóa sản phẩm</h4>
+          <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            onclick="hideDeleteSanPhamModal()"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="delete-sanpham-title" class="modal-body">
+          <div>Bạn có muốn xóa sản phẩm này không</div>
+        </div>
+        <div class="modal-footer">
+          <input
+            type="text"
+            id="delete-sanpham-id"
+            style="display: none"
+            value="test"
+          />
+          <button
+            id="delete-sanpham-button"
+            type="button"
+            class="btn btn-primary"
+            onclick="deleteSanPham()"
+          >
+            Delete
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            onclick="hideDeleteSanPhamModal()"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
